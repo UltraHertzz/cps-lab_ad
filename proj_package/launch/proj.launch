@@ -1,0 +1,18 @@
+<launch>
+  <include file="/home/gamma/project/src/f110-fall2018-skeletons/system/racecar/racecar/launch/teleop.launch"/>
+  <group ns="proj_package">
+    
+    <!--Params that need to be changed-->
+    <param name="sub_freq" value="1"/>
+    <param name="Kp" value="1.5"/>
+    <param name="Kd" value="0.1"/>
+    <param name="Ki" value="0"/>
+    <param name="look_ahead_coeff" value="0.5"/>
+    <param name="speed_limit" value="0.6"/>
+    <!--Params that need to be changed end-->
+
+    <node pkg="proj_package" name="key_board_teleop" type="key_board_teleop" output="screen"/>
+    <node pkg="proj_package" name="pid" type="pid" output="screen"/>
+    <node pkg="proj_package" name="mux" type="mux" output="screen"/>
+  </group>
+</launch>
